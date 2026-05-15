@@ -2,7 +2,7 @@ import "./App.css"
 
 import goldenFlowers from "./assets/1/GOLDEN flowers.png"
 import goldenStroke from "./assets/1/GOLDEN STROKE 1.png"
-import ourFoto1 from "./assets/our foto/first foto.webp"
+import ourFoto1 from "./assets/Our foto/first foto.webp"
 import heart from "./assets/1/Heart.png"
 
 function App() {
