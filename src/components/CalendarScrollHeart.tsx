@@ -10,8 +10,13 @@ const LINE_VIEWBOX = { width: 368, height: 1691 }
 const SCROLL_START_VP = 0.3
 const SCROLL_END_VP = 0.7
 const PATH_T_SAMPLES = 200
-/** Сдвиг старта вверх (px) */
+/** Сдвиг старта (px), нарастает на первых 5% скролла */
 const START_LIFT_PX = -16
+const START_LEFT_PX = -5
+/** Довоз в конце: вниз и вправо (px), нарастает на последних 5% скролла */
+const END_LIFT_PX = 10
+const END_LEFT_PX = -16
+const END_FADE_START = 0.95
 
 type Point = { x: number; y: number }
 
@@ -19,10 +24,7 @@ function clamp(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value))
 }
 
-function getElementCenter(
-  el: HTMLElement,
-  container: HTMLElement,
-): Point {
+function getElementCenter(el: HTMLElement, container: HTMLElement): Point {
   const rect = el.getBoundingClientRect()
   const containerRect = container.getBoundingClientRect()
   return {
@@ -122,14 +124,19 @@ export function CalendarScrollHeart() {
 
     const progress = getLineScrollProgress(line)
     const startT = pathStartTRef.current
-    const pathT =
-      progress <= 0 ? startT : startT + progress * (1 - startT)
+    const pathT = progress <= 0 ? startT : startT + progress * (1 - startT)
 
     const pos = getPathPointInContainer(path, svg, scene, pathT)
-    const liftFade = 1 - clamp(progress / 0.05, 0, 1)
-    const y = pos.y + START_LIFT_PX * liftFade
+    const startFade = 1 - clamp(progress / 0.05, 0, 1)
+    const endFade = clamp(
+      (progress - END_FADE_START) / (1 - END_FADE_START),
+      0,
+      1,
+    )
+    const x = pos.x + START_LEFT_PX * startFade + END_LEFT_PX * endFade
+    const y = pos.y + START_LIFT_PX * startFade + END_LIFT_PX * endFade
 
-    heart.style.transform = `translate(${pos.x}px, ${y}px) translate(-50%, -50%)`
+    heart.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`
   }, [])
 
   useEffect(() => {

@@ -113,9 +113,10 @@
   color: #111;
 }
 
-.invitation__first-our-foto {
-  grid-column: 1;
-  grid-row: 2;
+.invitation__first-our-foto,
+.invitation__second-our-foto,
+.invitation__third-our-foto,
+.invitation__four-our-foto {
   justify-self: center;
   margin: clamp(1rem, 4vw, 1.75rem) 1.25rem 0;
   max-width: min(88vw, 380px);
@@ -126,7 +127,15 @@
   line-height: 0;
 }
 
-.invitation__first-our-foto img {
+.invitation__first-our-foto {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.invitation__first-our-foto img,
+.invitation__second-our-foto img,
+.invitation__third-our-foto img,
+.invitation__four-our-foto img {
   display: block;
   width: 100%;
   height: auto;
@@ -173,13 +182,13 @@
   width: 3rem;
   height: 3rem;
   border-radius: 20%;
-  border: 1px solid #98AC70;
+  border: 1px solid #98ac70;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "CharterITC";
   font-size: clamp(1.25rem, 8vw, 5rem);
-  color: #98AC70;
+  color: #98ac70;
 }
 
 .invitation__calendar-day {
@@ -199,7 +208,7 @@
 .invitation__miniheart {
   position: relative;
   left: 3%;
-  top: 10%;
+  top: 2px;
   z-index: 1;
 }
 
@@ -256,3 +265,334 @@
   text-align: center;
 }
 
+
+.invitation__frame {
+  position: relative;
+  margin: -1rem 1.25rem 0;
+  justify-self: center;
+  max-width: min(92vw, 420px);
+  width: 100%;
+}
+
+.invitation__frame > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.invitation__location {
+  position: absolute;
+  inset: 14% 11% 13%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.65rem, 2.5vw, 1rem);
+  overflow: hidden;
+}
+
+.invitation__location-title {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.invitation__location-photo {
+  width: min(100%, 300px);
+  border: 1px solid #71834f;
+  border-radius: 12px;
+  overflow: hidden;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.invitation__location-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.invitation__location-address {
+  margin: 0;
+  font-family: "CharterITC", Georgia, serif;
+  font-size: clamp(0.95rem, 4.5vw, 1.35rem);
+  line-height: 1.45;
+  color: #111;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.invitation__location-map-btn {
+  display: inline-block;
+  margin-top: clamp(0.15rem, 1vw, 0.35rem);
+  padding: clamp(0.45rem, 2vw, 0.65rem) clamp(1rem, 4vw, 1.5rem);
+  font-family: "CharterITC", Georgia, serif;
+  font-size: clamp(1rem, 4.5vw, 1.35rem);
+  line-height: 1.4;
+  color: #111;
+  text-align: center;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid #71834f;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.invitation__countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: clamp(2rem, 5vw, 2.75rem) 1.25rem 0;
+}
+
+.invitation__countdown-title {
+  margin: 0;
+  width: 100%;
+}
+
+.invitation__countdown-timer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(0.15rem, 1.5vw, 0.5rem);
+  margin-top: clamp(1.25rem, 4vw, 1.75rem);
+  max-width: min(100%, 22rem);
+}
+
+.invitation__countdown-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.invitation__countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.25rem, 1.5vw, 0.45rem);
+}
+
+.invitation__countdown-circle {
+  width: clamp(3rem, 14vw, 4.25rem);
+  height: clamp(3rem, 14vw, 4.25rem);
+  border: 1px solid #71834f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "CharterITC", Georgia, serif;
+  font-size: clamp(1.1rem, 5.5vw, 1.65rem);
+  line-height: 1;
+  color: #111;
+}
+
+.invitation__countdown-sep {
+  align-self: center;
+  margin: 0 clamp(0.05rem, 0.8vw, 0.2rem);
+  padding-bottom: clamp(1.1rem, 5vw, 1.65rem);
+  font-family: "CharterITC", Georgia, serif;
+  font-size: clamp(1rem, 4.5vw, 1.35rem);
+  line-height: 1;
+  color: #111;
+}
+
+.invitation__countdown-label {
+  font-family: "CharterITC", Georgia, serif;
+  font-size: clamp(0.65rem, 2.8vw, 0.85rem);
+  line-height: 1.2;
+  color: #111;
+  text-align: center;
+}
+
+.invitation__countdown-rings {
+  display: block;
+  width: min(78vw, 320px);
+  height: auto;
+}
+
+.invitation__wishes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: clamp(2rem, 5vw, 2.75rem) 1.25rem 0;
+  padding-bottom: max(clamp(1.75rem, 6vw, 2.75rem), env(safe-area-inset-bottom));
+}
+
+.invitation__wishes-title {
+  margin: 0;
+  width: 100%;
+}
+
+.invitation__wishes-list {
+  list-style: none;
+  margin: clamp(1.5rem, 4vw, 2rem) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 2.25rem);
+  width: 100%;
+}
+
+.invitation__wishes-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.5rem, 2.5vw, 0.85rem);
+  width: 100%;
+}
+
+.invitation__wishes-num {
+  display: block;
+  width: clamp(3.5rem, 16vw, 5rem);
+  height: auto;
+}
+
+.invitation__wishes-text {
+  margin: 0;
+  max-width: min(92%, 22rem);
+  font-family: "CharterITC", Georgia, serif;
+  font-size: clamp(0.95rem, 4.5vw, 1.35rem);
+  line-height: 1.55;
+  color: #111;
+  text-align: center;
+}
+
+.invitation__wishes-btn,
+.invitation__guest-form-submit {
+  display: inline-block;
+  margin-top: clamp(1.25rem, 4vw, 1.75rem);
+  padding: clamp(0.45rem, 2vw, 0.65rem) clamp(1rem, 4vw, 1.5rem);
+  font-family: "CharterITC", Georgia, serif;
+  font-size: clamp(1rem, 4.5vw, 1.35rem);
+  line-height: 1.4;
+  color: #111;
+  text-align: center;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid #71834f;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.invitation__guest-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  margin-top: clamp(2rem, 5vw, 2.75rem);
+  margin-right: 1.25rem;
+  margin-bottom: 0;
+  margin-left: 1.25rem;
+  padding-bottom: max(clamp(1.75rem, 6vw, 2.75rem), env(safe-area-inset-bottom));
+  width: 100%;
+  max-width: min(88vw, 380px);
+  box-sizing: border-box;
+}
+
+.invitation__guest-form-title {
+  margin: 0;
+  width: 100%;
+}
+
+.invitation__guest-form-intro {
+  margin: clamp(1rem, 3vw, 1.5rem) 0 0;
+  max-width: min(92%, 22rem);
+  font-family: "CharterITC", Georgia, serif;
+  font-size: clamp(0.95rem, 4.5vw, 1.35rem);
+  line-height: 1.55;
+  color: #111;
+  text-align: center;
+}
+
+.invitation__guest-form-fields {
+  width: 100%;
+  margin: clamp(1.5rem, 4vw, 2rem) 0 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 4vw, 1.75rem);
+}
+
+.invitation__guest-form-group {
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: 0;
+}
+
+.invitation__guest-form-legend,
+.invitation__guest-form-label {
+  display: block;
+  font-family: "CharterITC", Georgia, serif;
+  font-size: clamp(0.95rem, 4.5vw, 1.35rem);
+  line-height: 1.45;
+  color: #111;
+  text-align: left;
+}
+
+.invitation__guest-form-legend {
+  margin-bottom: clamp(0.65rem, 2.5vw, 1rem);
+  padding: 0;
+}
+
+.invitation__guest-form-options {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.65rem, 2.5vw, 0.9rem);
+}
+
+.invitation__guest-form-radio {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.5rem, 2vw, 0.75rem);
+  font-family: "CharterITC", Georgia, serif;
+  font-size: clamp(0.95rem, 4.5vw, 1.35rem);
+  line-height: 1.45;
+  color: #111;
+  cursor: pointer;
+}
+
+.invitation__guest-form-radio input {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  margin: 0.2em 0 0;
+  accent-color: #71834f;
+  border: 1px solid #71834f;
+}
+
+.invitation__guest-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.35rem, 1.5vw, 0.5rem);
+  width: 100%;
+}
+
+.invitation__guest-form-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.35rem 0 0.5rem;
+  font-family: "CharterITC", Georgia, serif;
+  font-size: clamp(0.95rem, 4.5vw, 1.35rem);
+  line-height: 1.4;
+  color: #111;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #71834f;
+  border-radius: 0;
+  outline: none;
+}
+
+.invitation__guest-form-input:focus {
+  border-bottom-color: #5a6b3f;
+}
+
+.invitation__guest-form-submit {
+  align-self: center;
+}
+
+.invitation__four-our-foto-sign {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: max(clamp(1.75rem, 6vw, 2.75rem), env(safe-area-inset-bottom));
+}

@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/calendarscrollheart.tsx"],"version":"6.0.3"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/calendarscrollheart.tsx","./src/components/guestquestionnaire.tsx","./src/components/weddingcountdown.tsx"],"version":"6.0.3"}
