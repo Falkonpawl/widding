@@ -2,7 +2,7 @@ import icon1 from "../assets/calendar/events/1_Церкоквь.png"
 import icon2 from "../assets/calendar/events/2_Бокалы.png"
 import icon3 from "../assets/calendar/events/3_Кольца.png"
 import icon4 from "../assets/calendar/events/4_Начало-банкета.png"
-import icon5 from "../assets/calendar/events/5_салют.png"
+import icon5 from "../assets/calendar/events/5_Салют.png"
 import { CHURCH_MAP_URL, VENUE_MAP_URL } from "../constants/urls"
 
 export type CalendarEventSide = "left" | "right"
