@@ -15,8 +15,7 @@ import num3 from "./assets/numbers/3.svg"
 import { CalendarScrollHeart } from "./components/CalendarScrollHeart"
 import { GuestQuestionnaire } from "./components/GuestQuestionnaire"
 import { WeddingCountdown } from "./components/WeddingCountdown"
-
-const LOCATION_MAP_URL = "https://yandex.by/maps/-/CPsAvT8d"
+import { VENUE_MAP_URL } from "./constants/urls"
 const WISHES_TELEGRAM_URL = "https://t.me/+cHzAeafrd4g2ZWIy"
 
 const WISHES_ITEMS = [
@@ -93,7 +92,7 @@ function App() {
           </p>
           <a
             className="invitation__location-map-btn"
-            href={LOCATION_MAP_URL}
+            href={VENUE_MAP_URL}
             target="_blank"
             rel="noopener noreferrer"
           >
