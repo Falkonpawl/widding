@@ -187,7 +187,7 @@
   justify-content: center;
   align-items: center;
   font-family: "CharterITC";
-  font-size: clamp(1.25rem, 8vw, 5rem);
+  font-size: clamp(1.25rem, 8vw, 2.5rem);
   color: #98ac70;
 }
 
@@ -200,7 +200,7 @@
   justify-content: center;
   align-items: center;
   font-family: "CharterITC";
-  font-size: clamp(1.75rem, 9vw, 5.5rem);
+  font-size: clamp(1.75rem, 9vw, 3rem);
   color: #718746;
   margin: 0 0.8rem;
 }
@@ -597,4 +597,40 @@
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   padding-bottom: max(clamp(1.75rem, 6vw, 2.75rem), env(safe-area-inset-bottom));
+}
+
+@media (min-width: 768px) {
+  .invitation {
+    justify-items: center;
+  }
+
+  .invitation > :not(.invitation__corner) {
+    width: 100%;
+    max-width: 28rem;
+    box-sizing: border-box;
+    justify-self: center;
+  }
+
+  .invitation__main {
+    grid-row: 1;
+    place-self: stretch center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-inline: 0.5rem;
+  }
+
+  .invitation__heart-wrap {
+    width: 100%;
+    max-width: none;
+  }
+
+  .invitation__chapter {
+    grid-row: 2;
+    place-self: center;
+    padding-bottom: clamp(1.75rem, 6vw, 2.75rem);
+  }
+
+  .invitation__first-our-foto {
+    grid-row: auto;
+  }
 }

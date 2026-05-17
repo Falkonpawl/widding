@@ -140,7 +140,9 @@ function App() {
         </div>
       </div>
       <p className="invitation__title-text invitation__four-our-foto-sign">
-        С любовью, Павел и Злата!
+        С любовью,
+        <br />
+        Павел и Злата!
       </p>
     </div>
   )

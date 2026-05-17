@@ -20,10 +20,10 @@ export function GuestQuestionnaire() {
         onSubmit={handleSubmit}
         noValidate
       >
-        <fieldset className="invitation__guest-form-group">
-          <legend className="invitation__guest-form-legend">
-            Присутствую на торжестве
-          </legend>
+        <fieldset
+          className="invitation__guest-form-group"
+          aria-label="Присутствие на торжестве"
+        >
           <div className="invitation__guest-form-options">
             <label className="invitation__guest-form-radio" htmlFor="attendance-yes">
               <input

@@ -44,7 +44,9 @@ export function WeddingCountdown() {
   return (
     <section className="invitation__countdown">
       <p className="invitation__title-text invitation__countdown-title">
-        Мы скажем «Да» через...
+        Мы скажем
+        <br />
+        «Да» через...
       </p>
       <div className="invitation__countdown-timer" role="timer" aria-live="polite">
         {UNITS.map((unit, index) => (
