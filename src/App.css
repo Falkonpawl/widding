@@ -405,7 +405,9 @@
 .invitation__countdown-rings {
   display: block;
   width: min(78vw, 320px);
-  height: auto;
+  height: calc(min(78vw, 320px) * 219 / 320);
+  object-fit: cover;
+  object-position: center;
 }
 
 .invitation__wishes {
