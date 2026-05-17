@@ -1,5 +1,7 @@
 import { type FormEvent } from "react"
 
+import { ScrollReveal } from "./ScrollReveal"
+
 export function GuestQuestionnaire() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -11,15 +13,16 @@ export function GuestQuestionnaire() {
       <p className="invitation__title-text invitation__guest-form-title">
         Анкета гостя
       </p>
-      <p className="invitation__guest-form-intro">
+      <ScrollReveal as="p" className="invitation__guest-form-intro">
         Пожалуйста, подтвердите своё присутствие до 1 августа, чтобы мы могли
         спланировать нашу свадьбу наилучшим образом.
-      </p>
-      <form
-        className="invitation__guest-form-fields"
-        onSubmit={handleSubmit}
-        noValidate
-      >
+      </ScrollReveal>
+      <ScrollReveal className="invitation__guest-form-fields-wrap" delay={80}>
+        <form
+          className="invitation__guest-form-fields"
+          onSubmit={handleSubmit}
+          noValidate
+        >
         <fieldset
           className="invitation__guest-form-group"
           aria-label="Присутствие на торжестве"
@@ -72,7 +75,8 @@ export function GuestQuestionnaire() {
         <button type="submit" className="invitation__guest-form-submit">
           Отправить
         </button>
-      </form>
+        </form>
+      </ScrollReveal>
     </section>
   )
 }

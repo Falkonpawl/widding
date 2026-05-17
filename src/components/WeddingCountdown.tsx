@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 import ringsPhoto from "../assets/photo.svg"
+import { ScrollReveal } from "./ScrollReveal"
 
 const WEDDING_AT = new Date(2026, 7, 7, 13, 30, 0)
 
@@ -65,7 +66,12 @@ export function WeddingCountdown() {
           </div>
         ))}
       </div>
-      <img className="invitation__countdown-rings" src={ringsPhoto} alt="" />
+      <ScrollReveal
+        as="div"
+        className="invitation__countdown-rings-wrap"
+      >
+        <img className="invitation__countdown-rings" src={ringsPhoto} alt="" />
+      </ScrollReveal>
     </section>
   )
 }

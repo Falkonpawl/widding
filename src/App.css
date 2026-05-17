@@ -1,6 +1,5 @@
 .invitation {
   position: relative;
-  /* svh = видимая высота с открытыми панелями браузера (важно для первого экрана на телефоне) */
   min-height: 100vh;
   min-height: 100svh;
   width: 100%;
@@ -528,6 +527,12 @@
   text-align: center;
 }
 
+.invitation__countdown-rings-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .invitation__countdown-rings {
   display: block;
   width: min(78vw, 320px);
@@ -585,6 +590,16 @@
   line-height: 1.55;
   color: #111;
   text-align: center;
+}
+
+.invitation__wishes-btn-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.invitation__guest-form-fields-wrap {
+  width: 100%;
 }
 
 .invitation__wishes-btn,
@@ -725,13 +740,53 @@
   align-self: center;
 }
 
-.invitation__four-our-foto-sign {
+.invitation__four-our-foto-sign-wrap {
+  overflow: hidden;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   padding-bottom: max(
     clamp(1.75rem, 6vw, 2.75rem),
     env(safe-area-inset-bottom)
   );
+}
+
+.invitation__four-our-foto-sign {
+  margin-bottom: 0;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  will-change: opacity, transform;
+}
+
+.scroll-reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal.scroll-reveal--block {
+  position: relative;
+  width: 100%;
+  max-width: min(92vw, 420px);
+  justify-self: center;
+  box-sizing: border-box;
+}
+
+li.scroll-reveal.calendar-event {
+  display: flex;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
 }
 
 @media (min-width: 768px) {

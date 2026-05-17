@@ -14,8 +14,10 @@ import num2 from "./assets/numbers/2.svg"
 import num3 from "./assets/numbers/3.svg"
 import { CalendarScrollHeart } from "./components/CalendarScrollHeart"
 import { GuestQuestionnaire } from "./components/GuestQuestionnaire"
+import { ScrollReveal } from "./components/ScrollReveal"
 import { WeddingCountdown } from "./components/WeddingCountdown"
 import { VENUE_MAP_URL } from "./constants/urls"
+
 const WISHES_TELEGRAM_URL = "https://t.me/+cHzAeafrd4g2ZWIy"
 
 const WISHES_ITEMS = [
@@ -71,14 +73,14 @@ function App() {
         </div>
       </div>
       <p className="invitation__title-text">Дорогие гости!</p>
-      <p className="invitation__second-text">
+      <ScrollReveal as="p" className="invitation__second-text">
         Мы очень хотим сделать этот день особенным, поэтому приглашаем Вас
         разделить с нами торжество, посвященное дню нашей свадьбы!
-      </p>
+      </ScrollReveal>
       <CalendarScrollHeart />
       <div className="invitation__frame">
         <img src={frame} alt="" aria-hidden />
-        <div className="invitation__location">
+        <ScrollReveal className="invitation__location">
           <p className="invitation__title-text invitation__location-title">
             Локация
           </p>
@@ -98,7 +100,7 @@ function App() {
           >
             Перейти на карту
           </a>
-        </div>
+        </ScrollReveal>
       </div>
       <WeddingCountdown />
       <div className="invitation__second-our-foto">
@@ -112,20 +114,27 @@ function App() {
         </p>
         <ol className="invitation__wishes-list">
           {WISHES_ITEMS.map((item, index) => (
-            <li key={index} className="invitation__wishes-item">
+            <ScrollReveal
+              key={index}
+              as="li"
+              className="invitation__wishes-item"
+              delay={index * 80}
+            >
               <img className="invitation__wishes-num" src={item.num} alt="" />
               <p className="invitation__wishes-text">{item.text}</p>
-            </li>
+            </ScrollReveal>
           ))}
         </ol>
-        <a
-          className="invitation__wishes-btn"
-          href={WISHES_TELEGRAM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Вступить в группу
-        </a>
+        <ScrollReveal className="invitation__wishes-btn-wrap" delay={240}>
+          <a
+            className="invitation__wishes-btn"
+            href={WISHES_TELEGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Вступить в группу
+          </a>
+        </ScrollReveal>
       </section>
       <div className="invitation__third-our-foto">
         <div className="our-foto-photo-frame">
@@ -138,11 +147,16 @@ function App() {
           <img src={ourFoto4} alt="" />
         </div>
       </div>
-      <p className="invitation__title-text invitation__four-our-foto-sign">
-        С любовью,
-        <br />
-        Павел и Злата!
-      </p>
+      <div className="invitation__four-our-foto-sign-wrap">
+        <ScrollReveal
+          as="p"
+          className="invitation__title-text invitation__four-our-foto-sign"
+        >
+          С любовью,
+          <br />
+          Павел и Злата!
+        </ScrollReveal>
+      </div>
     </div>
   )
 }

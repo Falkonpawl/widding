@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef } from "react"
 import heartWithNumber from "../assets/calendar/heart_with_number.svg"
 import miniheart from "../assets/calendar/mini_heart.svg"
 import { CALENDAR_EVENTS } from "../data/calendarEvents"
+import { ScrollReveal } from "./ScrollReveal"
 
 const LINE_PATH_D =
   "M196.569 0.886719C175.481 159.844 338.03 164.15 322.609 286.256C303.302 439.13 38.3447 409.718 38.3436 567.932C38.3425 726.145 336.53 703.631 344.986 867.868C353.442 1032.1 137.768 990.039 38.3436 1095.08C-73.2167 1212.94 95.0133 1279.08 217.387 1323.46C314.022 1358.5 366.475 1413.71 366.469 1480.61C366.463 1546.82 306.768 1606.89 200.41 1689.54"
@@ -207,10 +208,12 @@ export function CalendarScrollHeart() {
         </div>
         <ul className="calendar-events" aria-label="Расписание дня">
           {CALENDAR_EVENTS.map((event, i) => (
-            <li
+            <ScrollReveal
               key={event.title}
+              as="li"
               className={`calendar-event calendar-event--${event.side} calendar-event--row${i + 1}`}
               style={{ gridRow: i + 1 }}
+              delay={i * 80}
             >
               <div className="calendar-event__inner">
                 <img className="calendar-event__icon" src={event.icon} alt="" />
@@ -227,7 +230,7 @@ export function CalendarScrollHeart() {
                   </a>
                 )}
               </div>
-            </li>
+            </ScrollReveal>
           ))}
         </ul>
       </div>
