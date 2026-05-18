@@ -824,3 +824,91 @@ li.scroll-reveal.calendar-event {
     grid-row: auto;
   }
 }
+
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: max-content;
+  max-width: 90vw;
+}
+
+.toast {
+  pointer-events: auto;
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1.2rem, 4vw, 2rem);
+  font-family: "CharterITC", Georgia, serif;
+  font-size: clamp(0.9rem, 4.3vw, 1.2rem);
+  border-radius: 12px;
+  color: #111;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  animation:
+    slideUpFadeIn 0.4s ease-out forwards,
+    slideDownFadeOut 0.4s ease-in forwards 3.6s; /* Начинает исчезать через 3.6 сек */
+}
+
+.toast--success {
+  background-color: #d9ead3; /* Пастельный зеленый из таблицы */
+  border: 1px solid #71834f;
+}
+
+.toast--error {
+  background-color: #f4cccc; /* Пастельный красный из таблицы */
+  border: 1px solid #691b26;
+  color: #691b26;
+}
+
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDownFadeOut {
+  from {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(0, 100%);
+  }
+}
+
+/* Текст лейбла при ошибке */
+.field-error-text {
+  color: #691b26 !important;
+}
+
+/* Инпут при ошибке */
+.input-error {
+  border-color: #691b26 !important;
+  background-color: rgba(
+    105,
+    27,
+    38,
+    0.05
+  ); /* Легкий оттенок красного для фона */
+}
+
+/* Радиокнопки или их контейнеры, если нужно подсветить область */
+.field-error {
+  border-bottom: 1px solid #691b26;
+}
+
+.invitation__guest-form-input, 
+.invitation__guest-form-label,
+.invitation__guest-form-radio span {
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
