@@ -1,7 +1,10 @@
 import "./App.css"
+import { useState, useEffect } from "react"
 
-import goldenFlowers from "./assets/1/GOLDEN flowers.png"
-import goldenStroke from "./assets/1/GOLDEN STROKE 1.png"
+import goldenFlowersTop from "./assets/1/GOLDEN flowers.png"
+import goldenStrokeTop from "./assets/1/GOLDEN STROKE 1.png"
+import goldenFlowersBottom from "./assets/1/GOLDEN LINE 2.png"
+import goldenStrokeBottom from "./assets/1/GOLDEN png.png"
 import ourFoto1 from "./assets/Our foto/first foto.webp"
 import ourFoto2 from "./assets/Our foto/second foto.jpg"
 import ourFoto3 from "./assets/Our foto/third foto.jpg"
@@ -36,20 +39,31 @@ const WISHES_ITEMS = [
 ] as const
 
 function App() {
+  const [isDesktop, setIsDesktop] = useState(false)
+  useEffect(() => {
+    const checkWidth = () => setIsDesktop(window.innerWidth >= 1024)
+    checkWidth()
+    window.addEventListener("resize", checkWidth)
+    return () => window.removeEventListener("resize", checkWidth)
+  }, [])
   return (
     <div className="invitation">
-      <div
-        className="invitation__corner invitation__corner--stroke"
-        aria-hidden
-      >
-        <img src={goldenStroke} alt="" />
+      <div className="invitation__corner invitation__corner--strokeTop">
+        <img src={goldenStrokeTop} alt="" />
       </div>
-      <div
-        className="invitation__corner invitation__corner--flowers"
-        aria-hidden
-      >
-        <img src={goldenFlowers} alt="" />
+      <div className="invitation__corner invitation__corner--flowersTop">
+        <img src={goldenFlowersTop} alt="" />
       </div>
+      {isDesktop && (
+        <>
+          <div className="invitation__corner invitation__corner--flowersBottom">
+            <img src={goldenFlowersBottom} alt="" />
+          </div>
+          <div className="invitation__corner invitation__corner--strokeBottom">
+            <img src={goldenStrokeBottom} alt="" />
+          </div>
+        </>
+      )}
 
       <main className="invitation__main">
         <div className="invitation__heart-wrap">

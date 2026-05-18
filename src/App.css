@@ -28,17 +28,45 @@
   width: 100%;
 }
 
-.invitation__corner--stroke {
+.invitation__corner--strokeTop {
+  position: absolute;
   top: 0;
   left: 0;
-  width: min(40vw, 300px);
+  width: min(40vw, 260px);
 }
 
-.invitation__corner--flowers {
+.invitation__corner--flowersTop {
+  position: absolute;
   top: 0;
   right: 0;
   width: min(50vw, 280px);
 }
+
+.invitation__corner--flowersBottom {
+  display: none;
+  position: absolute;
+  top: 100vh; 
+  left: 0;
+  transform: translateY(-100%);
+  width: min(50vw, 450px); 
+}
+
+.invitation__corner--strokeBottom {
+  display: none;
+  position: absolute;
+  top: 100vh;
+  right: 0;
+  transform: translateY(-80%);
+  width: min(40vw, 400px);
+}
+
+@media (min-width: 1024px) {
+  .invitation__corner--strokeBottom,
+  .invitation__corner--flowersBottom {
+    display: block;
+  }
+}
+
 
 .invitation__main {
   grid-column: 1;
@@ -789,7 +817,7 @@ li.scroll-reveal.calendar-event {
   }
 }
 
-@media (min-width: 768px) {
+@media (max-height: 600px) or (min-width: 768px) {
   .invitation {
     justify-items: center;
   }
@@ -824,6 +852,7 @@ li.scroll-reveal.calendar-event {
     grid-row: auto;
   }
 }
+
 
 .toast-container {
   position: fixed;
