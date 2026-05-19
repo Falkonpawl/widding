@@ -17,6 +17,7 @@ import num2 from "./assets/numbers/2.svg"
 import num3 from "./assets/numbers/3.svg"
 import { CalendarScrollHeart } from "./components/CalendarScrollHeart"
 import { GuestQuestionnaire } from "./components/GuestQuestionnaire"
+import { Envelope } from "./components/Envelope"
 import { ScrollReveal } from "./components/ScrollReveal"
 import { WeddingCountdown } from "./components/WeddingCountdown"
 import { VENUE_MAP_URL } from "./constants/urls"
@@ -47,6 +48,8 @@ function App() {
     return () => window.removeEventListener("resize", checkWidth)
   }, [])
   return (
+    <>
+      <Envelope />
     <div className="invitation">
       <div className="invitation__corner invitation__corner--strokeTop">
         <img src={goldenStrokeTop} alt="" />
@@ -172,6 +175,7 @@ function App() {
         </ScrollReveal>
       </div>
     </div>
+    </>
   )
 }
 
