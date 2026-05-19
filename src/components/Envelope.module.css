@@ -1,0 +1,93 @@
+.envelopeOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Зеленый фон исчезает за 1 секунду */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #71834f;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 1;
+}
+
+.envelopeBody {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Общие стили для обеих половинок (уезжают и исчезают за 5 секунд) */
+.half {
+  position: absolute;
+  width: 200%;
+  height: 60vh;
+  object-fit: contain;
+  transition: transform 6s ease-in-out, opacity 6s ease-in-out;
+}
+
+.top {
+  bottom: 50%;
+  margin-bottom: -50px;
+  z-index: 3; /* Небольшой нахлест, подкрути под свои картинки */
+}
+
+.bottom {
+  top: 50%;
+  margin-top: -50px;
+  z-index: 2; /* Небольшой нахлест */
+}
+
+/* Кнопка исчезает за 1 секунду */
+.pressButton {
+  position: absolute;
+  z-index: 5;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.pressButton img {
+  width: 60%; /* Размер кнопки подгони под себя */
+  height: auto;
+}
+
+/* Фон и кнопка исчезают */
+.isOpened .background {
+  opacity: 0;
+}
+
+.isOpened .pressButton {
+  opacity: 0;
+  pointer-events: none; /* Чтобы нельзя было кликнуть повторно */
+}
+
+/* Верхняя половинка плавно улетает вверх и растворяется */
+.isOpened .top {
+  transform: translateY(-100vh);
+  opacity: 0;
+}
+
+/* Нижняя половинка плавно улетает вниз и растворяется */
+.isOpened .bottom {
+  transform: translateY(100vh);
+  opacity: 0;
+}
