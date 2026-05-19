@@ -77,7 +77,7 @@
   align-items: center;
   text-align: center;
   position: relative;
-  bottom: -25%;
+  bottom: -20%;
   z-index: 4;
   color: #fff;
   font-family: "CharterITC";
@@ -109,6 +109,8 @@
   transition:
     opacity 1s ease-in-out,
     visibility 1s ease-in-out;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .pressButton img {
