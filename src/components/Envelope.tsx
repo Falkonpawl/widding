@@ -31,10 +31,17 @@ export const Envelope: React.FC = () => {
           src={TopEnvelope} 
           className={`${styles.half} ${styles.top}`} 
         />
+        <div className={styles.topText}>
+            <p className={styles.invitationText}>Вы приглашены</p>
+            <p className={styles.weddindText}>на свадьбу</p>
+        </div>
         <img 
           src={BottomEnvelope} 
           className={`${styles.half} ${styles.bottom}`} 
         />
+        <div className={styles.bottomText}>
+            <p>Вы не просто так получили <br/> это приглашение!<br/> В особенный день мы очень <br/> хотим, чтобы вы были рядом!</p>
+        </div>
       </div>
 
       {/* Кнопка Press */}

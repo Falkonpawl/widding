@@ -39,19 +39,63 @@
   width: 200%;
   height: 60vh;
   object-fit: contain;
-  transition: transform 6s ease-in-out, opacity 6s ease-in-out;
+  transition:
+    transform 6s ease-in-out,
+    opacity 6s ease-in-out;
 }
 
 .top {
   bottom: 50%;
   margin-bottom: -50px;
-  z-index: 3; /* Небольшой нахлест, подкрути под свои картинки */
+  z-index: 3;
+}
+
+.topText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: -20%;
+  z-index: 4;
+  color: #fff;
+  font-family: "CharterITC";
+  font-size: clamp(0.95rem, 5vw, 1.25rem);
+  transition:
+    transform 6s ease-in-out,
+    opacity 6s ease-in-out;
 }
 
 .bottom {
   top: 50%;
   margin-top: -50px;
-  z-index: 2; /* Небольшой нахлест */
+  z-index: 2;
+}
+
+.bottomText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  bottom: -25%;
+  z-index: 4;
+  color: #fff;
+  font-family: "CharterITC";
+  font-size: clamp(1.25rem, 6vw, 1.5rem);
+  transition:
+    transform 6s ease-in-out,
+    opacity 6s ease-in-out;
+}
+
+.weddindText {
+  margin: 0;
+  font-family: "Caslon Becker No540 Swash [Rus", "Times New Roman", serif;
+  font-size: clamp(2rem, 11vw, 3rem);
+}
+.invitationText {
+  margin: 0;
+  font-family: "CharterITC", serif;
+  font-size: clamp(1.25rem, 9vw, 2.5rem);
 }
 
 /* Кнопка исчезает за 1 секунду */
@@ -62,7 +106,9 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+  transition:
+    opacity 1s ease-in-out,
+    visibility 1s ease-in-out;
 }
 
 .pressButton img {
@@ -90,4 +136,14 @@
 .isOpened .bottom {
   transform: translateY(100vh);
   opacity: 0;
+}
+
+.isOpened .topText {
+  opacity: 0;
+  transform: translateY(-100vh);
+}
+
+.isOpened .bottomText {
+  opacity: 0;
+  transform: translateY(100vh);
 }
