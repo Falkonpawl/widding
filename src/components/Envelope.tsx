@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Envelope.module.css';
+import { lockPageScroll, unlockPageScroll } from '../lib/scrollLock';
 
 import TopEnvelope from '../assets/envelope/photoo2.png.webp';
 import BottomEnvelope from '../assets/envelope/photoo2p.png.webp';
@@ -9,13 +10,20 @@ export const Envelope: React.FC = () => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [isRendered, setIsRendered] = useState<boolean>(true);
 
+  useEffect(() => {
+    if (!isRendered) {
+      unlockPageScroll();
+      return;
+    }
+    lockPageScroll();
+    return () => unlockPageScroll();
+  }, [isRendered]);
+
   const handleOpen = () => {
     setIsOpened(true);
-    // Полностью удаляем компонент из DOM через 5 секунд, 
-    // чтобы открыть доступ к контенту сайта под ним
     setTimeout(() => {
       setIsRendered(false);
-    }, 6000);
+    }, 5000);
   };
 
   if (!isRendered) return null;

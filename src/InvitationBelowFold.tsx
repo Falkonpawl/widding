@@ -8,6 +8,7 @@ import num1 from "./assets/numbers/1.svg"
 import num2 from "./assets/numbers/2.svg"
 import num3 from "./assets/numbers/3.svg"
 import { CalendarScrollHeart } from "./components/CalendarScrollHeart"
+import { FarewellCalendarSection } from "./components/FarewellCalendarSection"
 import { GuestQuestionnaire } from "./components/GuestQuestionnaire"
 import { ScrollReveal } from "./components/ScrollReveal"
 import { WeddingCountdown } from "./components/WeddingCountdown"
@@ -73,6 +74,7 @@ export default function InvitationBelowFold() {
           </a>
         </ScrollReveal>
       </div>
+      <FarewellCalendarSection />
       <WeddingCountdown />
       <div className="invitation__second-our-foto">
         <div className="our-foto-photo-frame">

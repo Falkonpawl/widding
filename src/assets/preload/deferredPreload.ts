@@ -15,6 +15,7 @@ import calendarIcon2Url from "../calendar/events/2_Бокалы.png?url"
 import calendarIcon3Url from "../calendar/events/3_Кольца.png?url"
 import calendarIcon4Url from "../calendar/events/4_Начало-банкета.png?url"
 import calendarIcon5Url from "../calendar/events/5_Салют.png?url"
+import calendarIcon6Url from "../calendar/events/6_Обед.png?url"
 import { preloadImages } from "../../lib/preload"
 
 const DEFERRED_URLS = [
@@ -35,6 +36,7 @@ const DEFERRED_URLS = [
   calendarIcon3Url,
   calendarIcon4Url,
   calendarIcon5Url,
+  calendarIcon6Url,
 ]
 
 export function preloadDeferredAssets(): void {

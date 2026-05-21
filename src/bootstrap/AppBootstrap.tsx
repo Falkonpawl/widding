@@ -1,6 +1,7 @@
-import { useEffect, useState, type ComponentType } from "react"
+import { useEffect, useRef, useState, type ComponentType } from "react"
 import { LoadingScreen } from "../components/LoadingScreen"
 import { delay } from "../lib/preload"
+import { lockPageScroll, unlockPageScroll } from "../lib/scrollLock"
 import { runCriticalPreload } from "../assets/preload/criticalPreload"
 
 const MIN_LOADER_MS = 1500
@@ -10,11 +11,13 @@ type BootPhase = "loading" | "ready"
 export function AppBootstrap() {
   const [phase, setPhase] = useState<BootPhase>("loading")
   const [App, setApp] = useState<ComponentType | null>(null)
+  const scrollHandoffRef = useRef(false)
 
   useEffect(() => {
     if (phase !== "loading") return
 
-    document.body.style.overflow = "hidden"
+    scrollHandoffRef.current = false
+    lockPageScroll()
 
     let cancelled = false
 
@@ -25,9 +28,9 @@ export function AppBootstrap() {
       const { default: AppComponent } = await import("../App")
       if (cancelled) return
 
+      scrollHandoffRef.current = true
       setApp(() => AppComponent)
       setPhase("ready")
-      document.body.style.overflow = ""
 
       const { preloadDeferredAssets } = await import(
         "../assets/preload/deferredPreload"
@@ -37,7 +40,7 @@ export function AppBootstrap() {
 
     return () => {
       cancelled = true
-      document.body.style.overflow = ""
+      if (!scrollHandoffRef.current) unlockPageScroll()
     }
   }, [phase])
 

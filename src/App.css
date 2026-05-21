@@ -389,6 +389,78 @@
   max-width: 100%;
 }
 
+.calendar-scene--farewell {
+  margin-top: clamp(2rem, 6vw, 3rem);
+}
+
+/* .calendar-scene__heart--farewell .calendar-scene__heart-num {
+  transform: translate(-2px, -1px);
+} */
+
+.farewell-line-wrap {
+  min-height: clamp(9rem, 28vw, 14rem);
+}
+
+.farewell-lunch-row {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  margin: 0;
+  padding: 0 clamp(0.1rem, 0.8vw, 0.35rem);
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.farewell-lunch-row__left,
+.farewell-lunch-row__right {
+  display: flex;
+  align-items: center;
+  min-height: 0;
+  min-width: 0;
+  max-width: 100%;
+  pointer-events: auto;
+}
+
+.farewell-lunch-row__left {
+  grid-column: 1;
+  justify-content: flex-start;
+  padding-right: clamp(0.25rem, 2.5vw, 0.75rem);
+  padding-left: clamp(0.1rem, 1vw, 0.35rem);
+}
+
+.farewell-lunch-row__right {
+  grid-column: 2;
+  justify-content: flex-end;
+  padding-left: clamp(0.25rem, 2.5vw, 0.75rem);
+  padding-right: clamp(0.1rem, 1vw, 0.35rem);
+}
+
+.farewell-lunch-row__left .calendar-event__inner {
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
+}
+
+.farewell-lunch-row .calendar-event__title {
+  font-size: clamp(1.25rem, 6.5vw, 1.95rem);
+  line-height: 1.15;
+}
+
+.farewell-lunch-row__description {
+  margin: 0;
+  max-width: 100%;
+  font-family: "CharterITC", Georgia, serif;
+  font-size: clamp(0.9rem, 4.5vw, 1.3rem);
+  line-height: 1.5;
+  color: #111;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
 .calendar-scene__heart {
   position: absolute;
   top: 0;
