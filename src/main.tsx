@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import weddingDisplayFontUrl from './assets/fonts/caslonbeckerno540swashrus_italic.otf?url'
 import weddingChapterFontUrl from './assets/fonts/Charter ITC.ttf?url'
 import './index.css'
-import App from './App'
+import { AppBootstrap } from './bootstrap/AppBootstrap'
 
 const WEDDING_FONT_STYLE_ID = 'wedding-font-faces'
 
@@ -35,6 +35,6 @@ injectWeddingFontFaces()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <AppBootstrap />
   </StrictMode>,
 )
