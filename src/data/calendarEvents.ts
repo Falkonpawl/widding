@@ -45,7 +45,7 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   {
     icon: icon5,
     title: "Окончание банкета",
-    time: "23:00",
+    time: "01:00",
     side: "left",
   },
 ]

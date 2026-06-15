@@ -7,6 +7,7 @@ import locationPhoto from "./assets/location/lokation_yakimowich.jpg"
 import num1 from "./assets/numbers/1.svg"
 import num2 from "./assets/numbers/2.svg"
 import num3 from "./assets/numbers/3.svg"
+import mini_heart from "./assets/calendar/mini_heart.svg"
 import { CalendarScrollHeart } from "./components/CalendarScrollHeart"
 import { FarewellCalendarSection } from "./components/FarewellCalendarSection"
 import { GuestQuestionnaire } from "./components/GuestQuestionnaire"
@@ -23,7 +24,7 @@ const WISHES_ITEMS = [
   },
   {
     num: num2,
-    text: "Приятным комплиментом для нас будет, если вместо цветов Вы решите подарить нам бутылочку вина для нашей семейной винотеки.",
+    text: "Сразу после торжества — на чемоданы и в путешествие! Цветы, увы, не переживут дороги:( А вот бутылочка вашего любимого алкоголя для нашего семейного бара будет идеальна. Вино, ром, джин, текила любой напиток найдёт своё место и повод за вас выпить!",
   },
   {
     num: num3,
@@ -35,8 +36,8 @@ export default function InvitationBelowFold() {
   return (
     <>
       <p className="invitation__chapter">
-        Разделите с нами это главное событие лета — подарите нам свое внимание и
-        поддержку.
+        Это главное событие лета! Подарите нам своё внимание и поддержку — для
+        нас это дороже любых подарков.
       </p>
 
       <div className="invitation__first-our-foto">
@@ -46,8 +47,7 @@ export default function InvitationBelowFold() {
       </div>
       <p className="invitation__title-text">Дорогие гости!</p>
       <ScrollReveal as="p" className="invitation__second-text">
-        Мы очень хотим сделать этот день особенным, поэтому приглашаем Вас
-        разделить с нами торжество, посвященное дню нашей свадьбы!
+        Мы очень хотим сделать этот день особенным, поэтому приглашаем вас разделить с нами торжество, посвящённое дню нашей свадьбы!
       </ScrollReveal>
       <CalendarScrollHeart />
       <div className="invitation__frame">
@@ -59,6 +59,9 @@ export default function InvitationBelowFold() {
           <div className="invitation__location-photo">
             <img src={locationPhoto} alt="Место проведения" />
           </div>
+          <p className="invitation__title-text invitation__location-venue">
+            Усадьба Якимович
+          </p>
           <p className="invitation__location-address">
             г. Глубокое,
             <br />
@@ -128,6 +131,9 @@ export default function InvitationBelowFold() {
           С любовью,
           <br />
           Павел и Злата!
+        </ScrollReveal>
+        <ScrollReveal className="invitation_mini_heart_end">
+          <img src={mini_heart}/>
         </ScrollReveal>
       </div>
     </>

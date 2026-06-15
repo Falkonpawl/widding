@@ -399,6 +399,8 @@
 
 .farewell-line-wrap {
   min-height: clamp(9rem, 28vw, 14rem);
+  margin-left: 7%;
+  margin-right: 7%;
 }
 
 .farewell-lunch-row {
@@ -406,11 +408,11 @@
   inset: 0;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   grid-template-rows: 1fr;
   align-items: center;
   margin: 0;
-  padding: 0 clamp(0.1rem, 0.8vw, 0.35rem);
+  padding: 0;
   box-sizing: border-box;
   pointer-events: none;
 }
@@ -507,17 +509,24 @@
 
 .invitation__location {
   position: absolute;
-  inset: 14% 11% 13%;
+  inset: 10% 9% 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: clamp(0.65rem, 2.5vw, 1rem);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .invitation__location-title {
   margin: 0;
   flex-shrink: 0;
+}
+
+.invitation__location-venue {
+  margin: 0;
+  flex-shrink: 0;
+  font-size: clamp(1.35rem, 10vw, 2.75rem);
 }
 
 .invitation__location-photo {
@@ -1012,4 +1021,18 @@ li.scroll-reveal.calendar-event {
 .invitation__guest-form-label,
 .invitation__guest-form-radio span {
   transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+
+.invitation_mini_heart_end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: clamp(0.75rem, 3vw, 1.25rem);
+}
+
+.invitation_mini_heart_end img {
+  width: clamp(3rem, 14vw, 4.75rem);
+  height: auto;
 }
