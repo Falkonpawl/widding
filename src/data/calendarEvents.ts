@@ -19,9 +19,9 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
   {
     icon: icon1,
     title: "Венчание",
-    time: "13:30",
+    time: "13:00",
     side: "left",
-    mapUrl: CHURCH_MAP_URL,
+    // mapUrl: CHURCH_MAP_URL,
   },
   {
     icon: icon2,
