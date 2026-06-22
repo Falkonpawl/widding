@@ -152,7 +152,7 @@ export function GuestQuestionnaire() {
             htmlFor="guest-companions"
           >
             <span className="invitation__guest-form-label">
-              Вы приходите с любимым человеком, второй половинкой или всей
+              Вы приходите с любимым человеком или всей
               семьёй с детьми? Пожалуйста, перечислите имена всех, кто будет с
               вами
             </span>
