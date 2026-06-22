@@ -76,7 +76,7 @@ export function GuestQuestionnaire() {
         Анкета гостя
       </p>
       <ScrollReveal as="p" className="invitation__guest-form-intro">
-        Пожалуйста, подтвердите своё присутствие до 1 августа, чтобы мы могли
+        Пожалуйста, подтвердите своё присутствие до 25 июля, чтобы мы могли
         спланировать нашу свадьбу наилучшим образом.
       </ScrollReveal>
       <ScrollReveal className="invitation__guest-form-fields-wrap" delay={80}>
